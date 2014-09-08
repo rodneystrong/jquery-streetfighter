@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	//when the user hovers over ryu
 	$('.ryu').on('mouseenter', function() {
 		$('.ryu-still').hide();
 		$('.ryu-ready').show();
@@ -7,6 +8,7 @@ $(document).ready(function(){
 		$('.ryu-ready').hide();
 		$('.ryu-still').show();
 	})
+	//when the user clicks on ryu
 	.on('mousedown', function() {
 		playHadouken();
 		$('.ryu-ready').hide();
@@ -26,6 +28,18 @@ $(document).ready(function(){
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
 		$('.hadouken').hide();	
+	})
+	//the keyboard 'x' function for ryu-cool
+	.on('keydown', function(e) {
+		if(e.which==88) {
+			$('.ryu-ready', '.ryu-throwing', '.ryu-still', '.hadouken').hide();
+			$('.ryu-cool').show();
+		}
+	})
+	//when the user lets go of the 'x' key
+	.on('keyup', function() {
+		$('.ryu-cool').hide();
+		$('.ryu-still').show();
 	});
 });
 
