@@ -28,11 +28,12 @@ $(document).ready(function(){
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
 		$('.hadouken').hide();	
-	})
+	});
 	//the keyboard 'x' function for ryu-cool
-	.on('keydown', function(e) {
+	$("body").on('keydown', function(e) {
 		if(e.which==88) {
-			$('.ryu-ready', '.ryu-throwing', '.ryu-still', '.hadouken').hide();
+			$('.ryu-still').hide();
+			$('.ryu-ready').hide();
 			$('.ryu-cool').show();
 		}
 	})
